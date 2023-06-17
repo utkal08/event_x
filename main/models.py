@@ -5,6 +5,7 @@ class Talks(models.Model):
     title = models.CharField(max_length=40)
     description = models.CharField(max_length=100)
     speaker = models.CharField(max_length=40)
+    email=models.EmailField(default=' ',null=False,blank=False)
     linkedin_profile = models.URLField()
     github_profile = models.URLField()
     approved=models.BooleanField(default=False)

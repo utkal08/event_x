@@ -1,7 +1,8 @@
 {% extends "main/base.html" %}
 {% load static %}
 {% block content %}
-    <h2>Home</h2>
+    <h2>You have successfully submitted your proposal</h2>
+    <p>We will have it reviewed!</p>
     <form action="" method="post">
         {% csrf_token %}
         <p><span>Title</span> {{form.title}}</p>
@@ -9,7 +10,6 @@
         <p><span>Speaker</span> {{form.speaker}}</p>
         <p><span>linkedin</span> {{form.linkedin_profile}}</p>
         <p><span>github</span> {{form.github_profile}}</p>
-        <p><span>email</span> {{form.email}}</p>
         <button type="submit">submit</button>
     </form>
 {% endblock content %}
