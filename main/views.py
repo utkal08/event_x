@@ -3,7 +3,13 @@ from main import forms
 from django.views.generic import FormView
 # Create your views here.
 def index(request):
-    return render(request, 'main/index.html', {})
+    if request.method == 'POST':
+        form = forms.TalksForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form=forms.TalksForm()
+    return render(request, 'main/index.html', {'form':form})
 
 
 def about(request):

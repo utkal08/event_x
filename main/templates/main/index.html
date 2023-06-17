@@ -2,5 +2,12 @@
 {% load static %}
 {% block content %}
     <h2>Home</h2>
-    <p>this will be the content of home</p>
+    <form action="" method="post">
+        <p><span>Title</span> {{form.title}}</p>
+        <p><span>Description</span> {{form.description}}</p>
+        <p><span>Speaker</span> {{form.speaker}}</p>
+        <p><span>linkedin</span> {{form.linkedin_profile}}</p>
+        <p><span>github</span> {{form.github_profile}}</p>
+        <button type="submit">submit</button>
+    </form>
 {% endblock content %}

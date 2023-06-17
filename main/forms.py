@@ -1,6 +1,7 @@
 from django import forms
 from django.forms.widgets import Textarea
 from django.core.mail import send_mail
+from main import models
 import logging
 
 logger=logging.getLogger(__name__)
@@ -23,4 +24,11 @@ class ContactForm(forms.Form):
                 ["customerservice@book_worms.domain"],
                 fail_silently=False
             )
+
+
+class TalksForm(forms.ModelForm):
+    class Meta:
+        model = models.Talks
+        fields = '__all__'
+        exclude=['approved',]
 
